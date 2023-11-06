@@ -247,4 +247,6 @@ gradle-app.setting
 
 src/main/resources/application-https.properties
 src/main/resources/application-database.properties
+/src/main/resources/application-appkey.properties
+
 /gradle/
