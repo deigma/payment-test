@@ -1,7 +1,18 @@
 package dev.katanoesis.paymenttest;
 
-public enum Status {
+public enum SaleStatus {
 
-    private String aa;
+    NONE("none"),
+    SALE("sale"),
+    FINISHED("finished");
 
+    private String statusCode;
+
+    SaleStatus(String statusCode) {
+        this.statusCode = statusCode;
+    }
+
+    public String getStatusCode() {
+        return statusCode;
+    }
 }
