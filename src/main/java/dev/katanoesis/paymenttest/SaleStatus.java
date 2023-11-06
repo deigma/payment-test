@@ -1,18 +1,18 @@
 package dev.katanoesis.paymenttest;
 
+import lombok.Getter;
+
+@Getter
 public enum SaleStatus {
 
     NONE("none"),
     SALE("sale"),
     FINISHED("finished");
 
-    private String statusCode;
+    private final String statusCode;
 
     SaleStatus(String statusCode) {
         this.statusCode = statusCode;
     }
 
-    public String getStatusCode() {
-        return statusCode;
-    }
 }

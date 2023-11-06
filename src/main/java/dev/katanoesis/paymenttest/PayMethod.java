@@ -1,18 +1,17 @@
 package dev.katanoesis.paymenttest;
 
+import lombok.Getter;
+
+@Getter
 public enum PayMethod {
 
     CARD("card"),
     ACCOUNT("account");
 
-    private String method;
+    private final String method;
 
     PayMethod(String method) {
         this.method = method;
-    }
-
-    public String getMethod() {
-        return method;
     }
 
 }
