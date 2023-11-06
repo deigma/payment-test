@@ -40,6 +40,7 @@ public class KakaoPayService {
 
         KakaoPayReadyResponseDto responseDto = KakaoPayReadyResponseDto.builder()
                 .tid(map.get("tid"))
+                .next_redirect_pc_url(map.get("next_redirect_pc_url"))
                 .build();
 
         return responseDto;
@@ -49,7 +50,7 @@ public class KakaoPayService {
     private HttpHeaders getHeaders() {
         HttpHeaders headers = new HttpHeaders();
 
-        headers.add("Authorization", kakaoKey);
+        headers.add("Authorization", "KakaoAK " + kakaoKey);
         headers.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
 
         return headers;
