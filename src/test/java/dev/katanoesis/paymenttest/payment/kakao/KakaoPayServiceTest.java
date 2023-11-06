@@ -29,4 +29,27 @@ class KakaoPayServiceTest {
         assertThat(kakaoKey.length()).isEqualTo(32);
     }
 
+    @Test
+    void 카카오페이_준비요청을_보낸다() {
+        KakaoPayReadyRequestDto requestDto = KakaoPayReadyRequestDto.builder()
+                .cid("TC0ONETIME")
+                .partner_order_id("1")
+                .partner_user_id("userid")
+                .item_name("아이템")
+                .quantity(11)
+                .total_amount(12000)
+                .tax_free_amount(1000)
+                .green_deposit(0)
+                .payment_method_type("MONEY")
+                .install_month(1)
+                .approval_url("https://localhost")
+                .cancel_url("https://localhost")
+                .fail_url("https://localhost")
+                .build();
+
+        KakaoPayReadyResponseDto responseDto = service.ready(requestDto);
+
+        assertThat(responseDto.getTid().length()).isEqualTo(20);
+    }
+
 }
